@@ -1,7 +1,7 @@
 Bot_salvador discord
 
 Este es mi primer bot hecho con la finalidad de aprender y matar tiempo,
-el objetivo es que este bot se capaz de reproducir musica de youtube.
+el objetivo es que este bot sea capaz de reproducir musica de youtube.
 
 Para usarlo necesitas instalar lo siguiente:
 node.js: https://nodejs.org/en/
@@ -32,7 +32,7 @@ Con esto tendremos los archivos de discord.js
 Ahora pasamos los archivos server.js y config2.json en la carpeta que hemos creado junto a los demas archivos
 que se han instalado.
 
-Lo que queda es renombrar config2.json a config.json abrimos con un editor de texto o con el visual studio el archivo y remplazamo "token"
+Lo que queda es renombrar config2.json a config.json abrimos con un editor de texto o con el visual studio el archivo y remplazamo "Token"
 por el token de nuestro bot.
 
 Y por ultimo para iniciar el bot abrimos un terminal en la carpeta (o el mismo que estabamos usando)
