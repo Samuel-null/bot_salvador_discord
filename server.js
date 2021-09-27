@@ -7,6 +7,7 @@ let prefix = config.prefix;
 
     client.on("ready", () => {
         console.log("Activado!!");
+        
     });
     
     client.on("messageCreate", (message) => {
@@ -127,10 +128,55 @@ let prefix = config.prefix;
                 var mensajefinal="saco " + mensaje2 + emoji +" has ganado";
             }
 
+
+            
             //se envia el mensaje
             message.channel.send(mensajefinal);
         }
+
+        //sexoooooooo
+        if(command === "sexo"){
+            //Creamos una variable nueva usando let llamada texto que contiene nuestros argumentos unidos con un espacio usando el metodo join(' '), usamos la variable texto que contiene los argumentos enviados 
+            let texto = args.join(" ");
+            //si no hay condicion nos devuelve lo siguiente
+            if(texto) return message.channel.send(`Actualmente este comando no funciona con argumentos prueba a poner /sexo`);
+
+            //Porcentaje aleatorio
+            //consigo un numero random del 0 al 100 (101 excluido) y lo meto en la variable rand
+            let rand = Math.floor(Math.random() * 101);
+            if (rand < 10) {
+                var mensaje = rand+"%" + " "+ "ERROR 404";
+            }
+            else if (rand > 11 && rand < 40) {
+                var mensaje = rand+"%" + " "+ "Lo siento herman@  :grimacing:  te comprendo no mojas ni pagando  :confused:  ya habra suerte tu sigue intentandolo :grinning: ";
+            }
+            else if (rand > 41 && rand < 70) {
+                var mensaje = rand+"%" + " "+ "Na herman@ tu ya estas servio :hot_face: a ti que te voy a decir :yawning_face:  sigue asi ";//para futuro que mencione a alguien random
+            }
+            else if (rand > 71) {
+                var mensaje = rand+"%" + " "+ "TUUU para ese organo reproductivo :hot_face:  :hot_face:  :hot_face:  :hot_face:  Deja un poco para los demas que tambien queremos";
+            }
+            else{
+                var mensaje = rand+"%" + " "+ "Si ves esto por alguna razon el bot no ha funcionado bien no es broma";
+            }
+            message.channel.send(mensaje);
+        }
     });
- 
+
+    //despedida a usuarios que se van del servidor
+    client.on("guildMemberRemove", (member) => {
+        let canal = cleint.channel.cache.get('888897051339943941');
+        canal.send(`${member.user}, a decidido dejar la squad.`);
+    });
+
+    //cuando alguien elimina un mensaje
+    client.on("messageDelete", (message) => {
+        let canal = client.channels.cache.get('888897051339943941'); 
+        canal.send(`**${message.author.username}** Diosito sabia lo que ponia en ese mensaje: ${message}`);
+       
+    });
+
+
+
  
  client.login(config.token);
